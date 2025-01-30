@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import "./styles/App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
 
 function App() {
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-red-500 font-open-sans">Gen3D | Home Page</h1>
+    <div className="bg-base w-full h-screen">
+      <Navbar />
+      <p className="w-full flex flex-row items-center justify-center">App.jsx</p>
     </div>
   )
 }

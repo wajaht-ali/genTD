@@ -9,6 +9,8 @@ export default {
         montserrat: ["Montserrat"],
       },
       colors: {
+        // dummy colors
+        "base": "#FCF5E5",
         primary: "#4f46e5",
         light: "#fff",
         lightShaded: "#f3f3f3",
