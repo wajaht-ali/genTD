@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/mimar_Logo-nobg.png";
-import Dropdown from "./Dropdown";
+import Dropdown from "../components/Dropdown";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();

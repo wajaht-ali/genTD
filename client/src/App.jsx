@@ -1,15 +1,23 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles/App.css";
-import { Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar';
+import Navbar from "./layout/Navbar";
+import { Excalidraw } from "@excalidraw/excalidraw";
+import Footer from './layout/Footer';
 
 function App() {
+  const [excalidrawAPI, setExcalidrawAPI] = useState(null);
 
   return (
-    <div className="bg-base w-full h-screen">
+    <div className="bg-base w-full min-h-screen mx-auto">
       <Navbar />
-      <p className="w-full flex flex-row items-center justify-center">App.jsx</p>
+      <div>
+        <p>Excalidraw</p>
+        <div className="w-[80%] h-[500px] rounded-xl mx-auto">
+          <Excalidraw ref={(api) => setExcalidrawAPI(api)} />
+        </div>
+      </div>
+      <Footer />
     </div>
   )
 }
