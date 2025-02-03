@@ -14,6 +14,7 @@ const Navbar: React.FC = () => {
   const productsDropdownItems = [
     { label: "Product 1", link: "/product-1" },
     { label: "Product 2", link: "/product-2" },
+    { label: "Product 3", link: "/product-3" },
   ];
 
   return (
@@ -28,9 +29,9 @@ const Navbar: React.FC = () => {
       </div>
       <div className="hidden md:block blockNav">
         <ul className="flex justify-between items-center w-full md:gap-x-2">
-          <Dropdown label="Products" items={productsDropdownItems} />
-          <Dropdown label="Sources" items={productsDropdownItems} />
-          <Dropdown label="Solutios" items={productsDropdownItems} />
+          <Dropdown label="Products" items={productsDropdownItems} onItemClick={undefined} />
+          <Dropdown label="Sources" items={productsDropdownItems} onItemClick={undefined} />
+          <Dropdown label="Solutios" items={productsDropdownItems} onItemClick={undefined} />
           <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
             Pricing
           </li>
@@ -63,9 +64,9 @@ const Navbar: React.FC = () => {
             : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-base mx-auto"
         }
       >
-        <Dropdown label="Products" items={productsDropdownItems} />
-        <Dropdown label="Sources" items={productsDropdownItems} />
-        <Dropdown label="Solutions" items={productsDropdownItems} />
+        <Dropdown label="Products" items={productsDropdownItems} onItemClick={handleClick} />
+        <Dropdown label="Sources" items={productsDropdownItems} onItemClick={handleClick} />
+        <Dropdown label="Solutions" items={productsDropdownItems} onItemClick={handleClick} />
         <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
           <Link to={"/pricing"}>Pricing</Link>
         </li>

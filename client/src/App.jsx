@@ -1,22 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React from 'react'
 import "./styles/App.css";
 import Navbar from "./layout/Navbar";
-import { Excalidraw } from "@excalidraw/excalidraw";
 import Footer from './layout/Footer';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
-  const [excalidrawAPI, setExcalidrawAPI] = useState(null);
 
   return (
     <div className="bg-base w-full min-h-screen mx-auto">
       <Navbar />
-      <div>
-        <p>Excalidraw</p>
-        <div className="w-[80%] h-[500px] rounded-xl mx-auto">
-          <Excalidraw ref={(api) => setExcalidrawAPI(api)} />
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
     </div>
   )

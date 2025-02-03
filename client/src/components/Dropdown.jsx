@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { MdKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Dropdown = ({ label, items }) => {
+const Dropdown = ({ label, items, onItemClick }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -32,7 +32,7 @@ const Dropdown = ({ label, items }) => {
                     } transition-opacity duration-200 z-10`}
             >
                 {items.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} onClick={onItemClick}>
                         <Link
                             to={item.link}
                             className="flex flex-row items-center justify-start gap-x-2 px-4 py-2 text-gray-700 hover:bg-sky-50 rounded-sm"
