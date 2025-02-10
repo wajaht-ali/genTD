@@ -6,11 +6,11 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className='w-full md:w-[80%] m-auto h-20 bg-base flex flex-col-reverse md:flex-row justify-between items-center p-2'>
+        <div className='w-full m-auto h-20 bg-base-gradient text-white flex flex-col-reverse md:flex-row justify-between items-center p-2 px-6'>
             <div>
                 <p className="font-open-sans opacity-50 font-semibold text-sm">© 2024 mimAR Studios, Inc.</p>
             </div>
-            <div className='flex flex-row items-center'>
+            <div className='flex flex-row items-center gap-x-3'>
                 <AiFillInstagram size={24} className={'mx-2 hover:text-orange-500 hover:cursor-pointer duration-200'} />
                 <AiOutlineTwitter size={24} className={'mx-2 hover:text-primary hover:cursor-pointer duration-200'} />
                 <FaLinkedin size={24} className={'mx-2 hover:text-primary hover:cursor-pointer duration-200'} />

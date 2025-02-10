@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/mimar_Logo-nobg.png";
 import Dropdown from "../components/Dropdown";
 
 const Navbar: React.FC = () => {
@@ -20,33 +19,51 @@ const Navbar: React.FC = () => {
   return (
     <div
       id="navbar"
-      className="sticky w-full h-[80px] flex justify-between items-center px-4 text-dark shadow-sm shadow-gray-300 z-10"
+      className="sticky w-full h-[100px] flex justify-between items-center px-8 text-dark z-10"
     >
       <div>
-        <Link to={"/"} className="cursor-pointer outline-none border-none">
-          <img src={logo} alt="img_logo" height={120} width={120} />
+        <Link
+          to={"/"}
+          className="font-jaro text-heading text-white cursor-pointer outline-none border-none uppercase"
+        >
+          Gen 3d
         </Link>
       </div>
-      <div className="hidden md:block blockNav">
-        <ul className="flex justify-between items-center w-full md:gap-x-2">
-          <Dropdown label="Products" items={productsDropdownItems} onItemClick={undefined} />
-          <Dropdown label="Sources" items={productsDropdownItems} onItemClick={undefined} />
-          <Dropdown label="Solutios" items={productsDropdownItems} onItemClick={undefined} />
-          <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
-            Pricing
+      <div className="hidden md:block blockNav text-white">
+        <ul className="font-Inter text-items flex justify-between items-center w-full md:gap-x-8">
+          {/* <Dropdown
+            label="Products"
+            items={productsDropdownItems}
+            onItemClick={undefined}
+          />
+          <Dropdown
+            label="Sources"
+            items={productsDropdownItems}
+            onItemClick={undefined}
+          />
+          <Dropdown
+            label="Solutios"
+            items={productsDropdownItems}
+            onItemClick={undefined}
+          /> */}
+          <li className="py-2 px-4 hover:bg-[#0fd9a] cursor-pointer">Home</li>
+          <li className="py-2 px-4 hover:bg-[#0fd9a] cursor-pointer">
+            Product
           </li>
-          <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
+          <li className="py-2 px-4 hover:bg-[#0fd9a] cursor-pointer">About</li>
+          <li className="py-2 px-4 hover:bg-[#0fd9a] cursor-pointer">
             Contact
           </li>
-          <li>
-            <button
-              onClick={() => navigate("/login")}
-              className="bg-primary hover:bg-primary/80 text-white mr-2 rounded-xl py-2 px-4 outline-none w-24"
-            >
-              Login
-            </button>
-          </li>
         </ul>
+      </div>
+
+      <div>
+        <button
+          onClick={() => navigate("/login")}
+          className="font-medium text-white rounded-full py-2 px-4 w-32 border border-light"
+        >
+          Login
+        </button>
       </div>
 
       <div
@@ -64,16 +81,34 @@ const Navbar: React.FC = () => {
             : "absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-base mx-auto"
         }
       >
-        <Dropdown label="Products" items={productsDropdownItems} onItemClick={handleClick} />
-        <Dropdown label="Sources" items={productsDropdownItems} onItemClick={handleClick} />
-        <Dropdown label="Solutions" items={productsDropdownItems} onItemClick={handleClick} />
-        <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
+        <Dropdown
+          label="Products"
+          items={productsDropdownItems}
+          onItemClick={handleClick}
+        />
+        <Dropdown
+          label="Sources"
+          items={productsDropdownItems}
+          onItemClick={handleClick}
+        />
+        <Dropdown
+          label="Solutions"
+          items={productsDropdownItems}
+          onItemClick={handleClick}
+        />
+        <li
+          onClick={handleClick}
+          className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer"
+        >
           <Link to={"/pricing"}>Pricing</Link>
         </li>
-        <li className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer">
+        <li
+          onClick={handleClick}
+          className="py-2 px-4 hover:bg-[#0fd9a] hover:underline cursor-pointer"
+        >
           <Link to={"/contact"}>Contact</Link>
         </li>
-        <li>
+        <li onClick={handleClick}>
           <button
             onClick={() => navigate("/login")}
             className="bg-primary hover:bg-primary/80 text-white mr-2 rounded-xl py-2 px-4 outline-none w-24"

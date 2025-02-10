@@ -9,9 +9,10 @@ import Home from './pages/Home';
 function App() {
 
   return (
-    <div className="bg-base w-full min-h-screen mx-auto">
+    <div className="bg-base-gradient w-full min-h-screen mx-auto">
       <Navbar />
       <Routes>
+        {/* We are using Excalidraw component here, in order to draw sketches. */}
         <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
